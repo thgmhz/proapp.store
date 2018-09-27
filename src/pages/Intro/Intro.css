@@ -1,4 +1,4 @@
-.Intro {  
+.wrapper {  
   position: relative;
   background: #3D3D3D;
   margin: 0;
@@ -102,7 +102,7 @@
 .text.t5 span:nth-child(1) {
   width: 100%;
   animation-delay: 8.6s;
-}
+} 
 
 @keyframes showEnterButton {
   0% {

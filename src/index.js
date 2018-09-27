@@ -8,18 +8,30 @@ import {
   Route,
 } from "react-router-dom";
 import registerServiceWorker from './registerServiceWorker'
+
+import Home from './pages/Home/Home'
 import './assets/css/main.css'
+
+const getInitialPage = () => {
+  if ('localStorage' in window) {
+    const introAlreadyShown = localStorage.getItem('proappstore_introAlreadyShown')
+    return introAlreadyShown ? Home : Intro
+  }
+  
+  return Home
+}
+
+const InitialPage = getInitialPage()
 
 ReactDOM.render(
   <Router>
     <Route
       render={({ location }) => ( 
         <React.Fragment>
-          <Route exact path="/" component={Intro} />
           <TransitionGroup>
             <CSSTransition key={location.key} classNames="fade" timeout={300}>
               <Switch location={location}>
-                <Route exact path="/" component={Intro} />
+                <Route exact path="/" component={InitialPage} />
               </Switch>
             </CSSTransition>  
           </TransitionGroup>  
