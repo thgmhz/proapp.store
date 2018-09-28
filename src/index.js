@@ -7,6 +7,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import registerServiceWorker from './registerServiceWorker'
 
 import Home from './pages/Home/Home'
@@ -22,12 +23,19 @@ const getInitialPage = () => {
 }
 
 const InitialPage = getInitialPage()
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#000'
+    }
+  }
+});
 
 ReactDOM.render(
   <Router>
     <Route
       render={({ location }) => ( 
-        <React.Fragment>
+        <MuiThemeProvider theme={theme}>
           <TransitionGroup>
             <CSSTransition key={location.key} classNames="fade" timeout={300}>
               <Switch location={location}>
@@ -35,7 +43,7 @@ ReactDOM.render(
               </Switch>
             </CSSTransition>  
           </TransitionGroup>  
-        </React.Fragment>
+        </MuiThemeProvider>
       )}
     /> 
   </Router>

@@ -4,14 +4,11 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import Input from '@material-ui/core/Input'
 import { withStyles } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
-import SearchIcon from '@material-ui/icons/Search'
-import AccountCircle from '@material-ui/icons/AccountCircle'
+// import AccountCircle from '@material-ui/icons/AccountCircle'
 
 import styles from './styles'
-
 class Header extends React.Component {
   state = {
     anchorEl: null,
@@ -36,9 +33,9 @@ class Header extends React.Component {
   }
 
   render() {
-    const { anchorEl } = this.state
+    // const { anchorEl } = this.state
     const { classes } = this.props
-    const isMenuOpen = Boolean(anchorEl)
+    // const isMenuOpen = Boolean(anchorEl)
 
     return (
       <React.Fragment>
@@ -68,25 +65,6 @@ class Header extends React.Component {
               >
                 <AccountCircle />
               </IconButton> */}
-            </Toolbar>
-          </AppBar>
-        </div>
-        <div className={classes.root}>
-          <AppBar position="static">
-            <Toolbar>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <Input
-                  placeholder="Search…"
-                  disableUnderline
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                />
-              </div>
             </Toolbar>
           </AppBar>
         </div>

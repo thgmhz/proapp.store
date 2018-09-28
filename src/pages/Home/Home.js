@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../../components/Header/Header'
-import CategoriesMenu from '../../components/Menu/Categories'
+import SearchBar from '../../components/SearchBar/SearchBar'
+import CategoriesMenu from '../../components/Menu/Categories/Categories'
 
 class Home extends Component {
   // constructor () {
@@ -11,6 +12,7 @@ class Home extends Component {
     return (
       <React.Fragment>
         <Header />
+        <SearchBar />
         <CategoriesMenu />
       </React.Fragment>
     )
